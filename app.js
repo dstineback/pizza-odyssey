@@ -6,28 +6,27 @@ var ballardStore, firstHillStore, interDStore, sluStore, gTownStore, ravStore;
 var timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm;
 var driverNum;
 
+timeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
+
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function deliveryReq(DeliveryMade){
-  driverNum = Math.ceil(DeliveryMade / 3);
-  return driverNum;
-};
-
+var driverAns;
 function driverReq(driverNum) {
-  if (driverNum) {
-    return '[driver not recommended]';
+  driverNum = Math.ceil(DeliveryMade / 3);
+  if (driverNum === 0) {
+    driverAns = '[driver not recommended] ';
   } else {
-    return '[driver recommenede' + driverNum + ' ]';
+    driverAns = '[driver recommenede' + driverNum + ' ] ';
   }
+  return driverAns;
 };
 
 timeEightAm = {
   time: '8:00',
   PizzaSold: getRandomIntInclusive(0,4),
   DeliveryMade: getRandomIntInclusive(0,4),
-  driverNum: deliveryReq(),
 };
 
 timeNineAm = {
@@ -127,7 +126,7 @@ firstHillStore = {
   storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
   salesData: timeArray
 };
-
+ 
 interDStore = {
   name: 'Internation District',
   storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
@@ -137,17 +136,23 @@ interDStore = {
 sluStore = {
   name: 'South Lake Union',
   storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  saleData: timeArray
+  salesData: timeArray
 };
 gTownStore = {
   name: 'GeorgeTown',
   storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  saleData: timeArray
+  salesData: timeArray
 };
 ravStore = {
   name: 'Ravenna ',
   storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  saleDate: timeArray
+  salesData: timeArray
 };
 
-timeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
+var liTag = document.createElement('li');
+
+liTag.setAttribute('id','ballard');
+
+liTag.textContent = ballardStore.salesData[0].time + '' + ballardStore.salesData[0].PizzaSold + ' pizza ' + ballardStore.salesData[0].DeliveryMade + ' deliveries ' + driverAns;
+
+document.getElementById('ballard').appendChild(liTag);
