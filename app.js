@@ -1,135 +1,153 @@
 console.log('java is working');
 //checking to make sure jave is working
 
-var TimeArray = [];
-
+var timeArray = [];
+var ballardStore, firstHillStore, interDStore, sluStore, gTownStore, ravStore;
 var timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm;
+var driverNum;
 
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+function deliveryReq(DeliveryMade){
+  driverNum = Math.ceil(DeliveryMade / 3);
+  return driverNum;
+};
+
+function driverReq(driverNum) {
+  if (driverNum) {
+    return '[driver not recommended]';
+  } else {
+    return '[driver recommenede' + driverNum + ' ]';
+  }
 };
 
 timeEightAm = {
   time: '8:00',
   PizzaSold: getRandomIntInclusive(0,4),
   DeliveryMade: getRandomIntInclusive(0,4),
+  driverNum: deliveryReq(),
 };
 
-var timeNineAm = {
+timeNineAm = {
   time: '9:00',
   PizzaSold: getRandomIntInclusive(0,4),
   DeliveryMade: getRandomIntInclusive(0,4),
 };
-var timeTenAm = {
+timeTenAm = {
   time: '10:00',
   PizzaSold: getRandomIntInclusive(0,4),
   DeliveryMade: getRandomIntInclusive(0,4),
 };
-var timeElevenAm = {
+timeElevenAm = {
   time: '11:00',
   PizzaSold: getRandomIntInclusive(0,7),
   DeliveryMade: getRandomIntInclusive(0,4),
 };
-var timeTwelvePm = {
+timeTwelvePm = {
   time: '12:00',
   PizzaSold: getRandomIntInclusive(0,7),
   DeliveryMade: getRandomIntInclusive(0,4),
 };
-var timeOnePm = {
+timeOnePm = {
   time: '1:00',
   PizzaSold: getRandomIntInclusive(0,7),
   DeliveryMade: getRandomIntInclusive(0,4),
 };
-var timeTwoPm = {
+timeTwoPm = {
   time: '2:00',
   PizzaSold: getRandomIntInclusive(2,15),
   DeliveryMade: getRandomIntInclusive(1,4),
 };
-var timeThreePm = {
+timeThreePm = {
   time: '3:00',
   PizzaSold: getRandomIntInclusive(2,15),
   DeliveryMade: getRandomIntInclusive(1,4),
 };
-var timeFourPm = {
+timeFourPm = {
   time: '4:00',
   PizzaSold: getRandomIntInclusive(2,15),
   DeliveryMade: getRandomIntInclusive(1,4),
 };
-var timeFivePm = {
+timeFivePm = {
   time: '5:00',
   PizzaSold: getRandomIntInclusive(15,35),
   DeliveryMade: getRandomIntInclusive(3,8),
 };
-var timeSixPm = {
+timeSixPm = {
   time: '6:00',
   PizzaSold: getRandomIntInclusive(15,35),
   DeliveryMade: getRandomIntInclusive(3,8),
 };
-var timeSevenPm = {
+timeSevenPm = {
   time: '7:00',
   PizzaSold: getRandomIntInclusive(15,35),
   DeliveryMade: getRandomIntInclusive(3,8),
 };
-var timeEightPm = {
+timeEightPm = {
   time: '8:00',
   PizzaSold: getRandomIntInclusive(12,31),
   DeliveryMade: getRandomIntInclusive(5,12),
 };
-var timeNinePm = {
+timeNinePm = {
   time: '9:00',
   PizzaSold: getRandomIntInclusive(12,31),
   DeliveryMade: getRandomIntInclusive(5,12),
 };
-var timeTenPm = {
+timeTenPm = {
   time: '10:00',
   PizzaSold: getRandomIntInclusive(12,31),
   DeliveryMade: getRandomIntInclusive(5,12),
 };
-var timeElevenPm = {
+timeElevenPm = {
   time: '11:00',
   PizzaSold: getRandomIntInclusive(5,20),
   DeliveryMade: getRandomIntInclusive(6,11),
 };
-var timeTwelveAm = {
+timeTwelveAm = {
   time: '12:00',
   PizzaSold: getRandomIntInclusive(5,20),
   DeliveryMade: getRandomIntInclusive(6,11),
 };
-var timeOneAm = {
+timeOneAm = {
   time: '1:00',
   PizzaSold: getRandomIntInclusive(5,20),
   DeliveryMade: getRandomIntInclusive(6,11),
 };
 
-var ballardStore = {
+ballardStore = {
   name: 'Ballard',
-  salesData: [TimeArray],
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  salesData: timeArray
 };
 
-var firstHillStore = {
+firstHillStore = {
   name: 'First Hill',
-  salesData: [TimeArray],
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  salesData: timeArray
 };
 
-var interDStore = {
+interDStore = {
   name: 'Internation District',
-  salesData: [TimeArray],
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  salesData: timeArray
 };
 
-var sluStore = {
+sluStore = {
   name: 'South Lake Union',
-  saleData: [TimeArray]
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  saleData: timeArray
 };
-var gTownStore = {
+gTownStore = {
   name: 'GeorgeTown',
-  saleData: [TimeArray],
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  saleData: timeArray
 };
-var ravStore = {
-  name: 'Ravenna',
-  saleDate: [TimeArray],
+ravStore = {
+  name: 'Ravenna ',
+  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
+  saleDate: timeArray
 };
 
-TimeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
-
-
-//console.table(TimeArray);
+timeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
