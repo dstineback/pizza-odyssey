@@ -1,13 +1,15 @@
 console.log('java is working');
 //checking to make sure jave is working
 
-var TimeArray = [timeEightAm,timeNineAm,timeTenAm,timeElevenAm,timetwlevePm,timeOnePm,timeTwoPm,timeThreePm,timeFourPm,timeFivePm,timeSixPm,timeSevenPm,timeEightPm,timeNinePm,timeTenPm,timeElevenPm,timeTwelveAm,timeOneAm,];
+var TimeArray = [];
+
+var timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm;
 
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
-var timeEightAm = {
+timeEightAm = {
   time: '8:00',
   PizzaSold: getRandomIntInclusive(0,4),
   DeliveryMade: getRandomIntInclusive(0,4),
@@ -98,3 +100,36 @@ var timeOneAm = {
   PizzaSold: getRandomIntInclusive(5,20),
   DeliveryMade: getRandomIntInclusive(6,11),
 };
+
+var ballardStore = {
+  name: 'Ballard',
+  salesData: [TimeArray],
+};
+
+var firstHillStore = {
+  name: 'First Hill',
+  salesData: [TimeArray],
+};
+
+var interDStore = {
+  name: 'Internation District',
+  salesData: [TimeArray],
+};
+
+var sluStore = {
+  name: 'South Lake Union',
+  saleData: [TimeArray]
+};
+var gTownStore = {
+  name: 'GeorgeTown',
+  saleData: [TimeArray],
+};
+var ravStore = {
+  name: 'Ravenna',
+  saleDate: [TimeArray],
+};
+
+TimeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
+
+
+//console.table(TimeArray);
