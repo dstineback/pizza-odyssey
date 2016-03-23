@@ -18,6 +18,7 @@ function hourlyData(time, minPizzaSold, maxPizzaSold, minDeliveriesMade, maxDeli
   this.driversNeeded = Math.ceil(this.deliveriesMade / 3);
 }
 
+//ballard Store info
 var ballard = new PizzaLocation('ballard');
 ballard.pushHourlyData(new hourlyData('8:00 am', 0, 3, 1, 7));
 ballard.pushHourlyData(new hourlyData('9:00 am', 0, 3, 1, 7));
@@ -122,6 +123,118 @@ ballardTable.appendChild(nineteenRow);
 ballardTable.appendChild(twentyRow);
 
 document.getElementById('ballard').appendChild(ballardTable);
+
+//First Hill store
+var firstHilld = new PizzaLocation('firstHilld');
+firstHilld.pushHourlyData(new hourlyData('8:00 am', 0, 3, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('9:00 am', 0, 3, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('10:00 am', 0, 3, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('11:00 am', 5, 10, 2, 8));
+firstHilld.pushHourlyData(new hourlyData('Noon ', 5, 10, 2, 8));
+firstHilld.pushHourlyData(new hourlyData('1:00 pm', 5, 10, 2, 8));
+firstHilld.pushHourlyData(new hourlyData('2:00 pm', 2, 13, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('3:00 pm', 2, 13, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('4:00 pm', 2, 13, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('5:00 pm', 2, 13, 1, 7));
+firstHilld.pushHourlyData(new hourlyData('6:00 pm', 0, 15, 2, 9));
+firstHilld.pushHourlyData(new hourlyData('7:00 pm', 0, 15, 2, 9));
+firstHilld.pushHourlyData(new hourlyData('8:00 pm', 1, 3, 4, 12));
+firstHilld.pushHourlyData(new hourlyData('9:00 pm', 1, 3, 4, 12));
+firstHilld.pushHourlyData(new hourlyData('10:00 pm', 1, 3, 4, 12));
+firstHilld.pushHourlyData(new hourlyData('11:00 pm', 8, 15, 6, 16));
+firstHilld.pushHourlyData(new hourlyData('Midnight', 8, 15, 6, 16));
+firstHilld.pushHourlyData(new hourlyData('1:00 am', 8, 15, 6, 16));
+
+// function generateDataRow(arrayForColum){
+//   var row = document.createElement('tr');
+//   var col;
+//   for (var i = 0; i < arrayForColum.length; i++) {
+//     col = document.createElement('td');
+//     col.textContent = arrayForColum[i];
+//     row.appendChild(col);
+//   }
+//   return row;
+// }
+//
+// function generateHeadingRow(data) {
+//   var row = document.createElement('tr');
+//   var col;
+//   for (var i = 0; i < data.length; i++) {
+//     col = document.createElement('th');
+//     col.textContent = data[i];
+//     row.appendChild(col);
+//   }
+//   return row;
+// }
+
+
+// var hourData;
+// for (var i = 0; i < ballard.hourlyData.length; i++) {
+//   hourData = ballard.hourlyData[i];
+//   hourData.time;
+//   console.log('hourData time');
+//   hourData.pizzaSold;
+//   console.log('hourData pizzaSold');
+//   hourData.deliveriesMade;
+//   console.log('hourData deliveriesMade');
+//   hourData.driversNeeded;
+//   console.log('hour driversNeeded');
+//
+// }
+
+var firstHilldTable = document.createElement('table');
+
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+var secondRow = generateDataRow([firstHilld.hourlyData[0].time, firstHilld.hourlyData[0].pizzaSold, firstHilld.hourlyData[0].deliveriesMade, firstHilld.hourlyData[0].driversNeeded]);
+var thirdRow = generateDataRow([firstHilld.hourlyData[1].time, firstHilld.hourlyData[1].pizzaSold, firstHilld.hourlyData[1].deliveriesMade, firstHilld.hourlyData[1].driversNeeded]);
+var fourthRow = generateDataRow([firstHilld.hourlyData[2].time, firstHilld.hourlyData[2].pizzaSold, firstHilld.hourlyData[2].deliveriesMade, firstHilld.hourlyData[2].driversNeeded]);
+var fifthRow = generateDataRow([firstHilld.hourlyData[3].time, firstHilld.hourlyData[3].pizzaSold, firstHilld.hourlyData[3].deliveriesMade, firstHilld.hourlyData[3].driversNeeded]);
+var sixthRow = generateDataRow([firstHilld.hourlyData[3].time, firstHilld.hourlyData[3].pizzaSold, firstHilld.hourlyData[3].deliveriesMade, firstHilld.hourlyData[3].driversNeeded]);
+var seventhRow = generateDataRow([firstHilld.hourlyData[4].time, firstHilld.hourlyData[4].pizzaSold, firstHilld.hourlyData[4].deliveriesMade, firstHilld.hourlyData[4].driversNeeded]);
+var eighthRow = generateDataRow([firstHilld.hourlyData[5].time, firstHilld.hourlyData[5].pizzaSold, firstHilld.hourlyData[5].deliveriesMade, firstHilld.hourlyData[5].driversNeeded]);
+var ninthRow = generateDataRow([firstHilld.hourlyData[6].time, firstHilld.hourlyData[6].pizzaSold, firstHilld.hourlyData[6].deliveriesMade, firstHilld.hourlyData[6].driversNeeded]);
+var tenthRow = generateDataRow([firstHilld.hourlyData[7].time, firstHilld.hourlyData[7].pizzaSold, firstHilld.hourlyData[7].deliveriesMade, firstHilld.hourlyData[7].driversNeeded]);
+var elevnthRow = generateDataRow([firstHilld.hourlyData[8].time, firstHilld.hourlyData[8].pizzaSold, firstHilld.hourlyData[8].deliveriesMade, firstHilld.hourlyData[8].driversNeeded]);
+var twelveRow = generateDataRow([firstHilld.hourlyData[9].time, firstHilld.hourlyData[9].pizzaSold, firstHilld.hourlyData[9].deliveriesMade, firstHilld.hourlyData[9].driversNeeded]);
+var thirteenRow = generateDataRow([firstHilld.hourlyData[10].time, firstHilld.hourlyData[10].pizzaSold, firstHilld.hourlyData[10].deliveriesMade, firstHilld.hourlyData[10].driversNeeded]);
+var fourteenRow = generateDataRow([firstHilld.hourlyData[11].time, firstHilld.hourlyData[11].pizzaSold, firstHilld.hourlyData[11].deliveriesMade, firstHilld.hourlyData[11].driversNeeded]);
+var fiveteenRow = generateDataRow([firstHilld.hourlyData[12].time, firstHilld.hourlyData[12].pizzaSold, firstHilld.hourlyData[12].deliveriesMade, firstHilld.hourlyData[12].driversNeeded]);
+var sixteenRow = generateDataRow([firstHilld.hourlyData[13].time, firstHilld.hourlyData[13].pizzaSold, firstHilld.hourlyData[13].deliveriesMade, firstHilld.hourlyData[13].driversNeeded]);
+var seventeenRow = generateDataRow([firstHilld.hourlyData[14].time, firstHilld.hourlyData[14].pizzaSold, firstHilld.hourlyData[14].deliveriesMade, firstHilld.hourlyData[14].driversNeeded]);
+var eightteenRow = generateDataRow([firstHilld.hourlyData[15].time, firstHilld.hourlyData[15].pizzaSold, firstHilld.hourlyData[15].deliveriesMade, firstHilld.hourlyData[15].driversNeeded]);
+var nineteenRow = generateDataRow([firstHilld.hourlyData[16].time, firstHilld.hourlyData[16].pizzaSold, firstHilld.hourlyData[16].deliveriesMade, firstHilld.hourlyData[16].driversNeeded]);
+var twentyRow = generateDataRow([firstHilld.hourlyData[17].time, firstHilld.hourlyData[17].pizzaSold, firstHilld.hourlyData[17].deliveriesMade, firstHilld.hourlyData[17].driversNeeded]);
+
+firstHilldTable.appendChild(firstRow);
+firstHilldTable.appendChild(secondRow);
+firstHilldTable.appendChild(thirdRow);
+firstHilldTable.appendChild(fourthRow);
+firstHilldTable.appendChild(fifthRow);
+firstHilldTable.appendChild(sixthRow);
+firstHilldTable.appendChild(seventhRow);
+firstHilldTable.appendChild(eighthRow);
+firstHilldTable.appendChild(ninthRow);
+firstHilldTable.appendChild(tenthRow);
+firstHilldTable.appendChild(elevnthRow);
+firstHilldTable.appendChild(twelveRow);
+firstHilldTable.appendChild(thirteenRow);
+firstHilldTable.appendChild(fourteenRow);
+firstHilldTable.appendChild(fiveteenRow);
+firstHilldTable.appendChild(sixteenRow);
+firstHilldTable.appendChild(seventeenRow);
+firstHilldTable.appendChild(eightteenRow);
+firstHilldTable.appendChild(nineteenRow);
+firstHilldTable.appendChild(twentyRow);
+
+document.getElementById('firstHilld').appendChild(firstHilldTable);
+
+//International District store
+
+//South Lake Union store
+
+//Georgetown store
+
+//Ravenna store
 
 
 
