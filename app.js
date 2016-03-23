@@ -81,6 +81,24 @@ var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Driv
 
 var secondRow = generateDataRow([ballard.hourlyData[0].time, ballard.hourlyData[0].pizzaSold, ballard.hourlyData[0].deliveriesMade, ballard.hourlyData[0].driversNeeded]);
 var thirdRow = generateDataRow([ballard.hourlyData[1].time, ballard.hourlyData[1].pizzaSold, ballard.hourlyData[1].deliveriesMade, ballard.hourlyData[1].driversNeeded]);
+var fourthRow = generateDataRow([ballard.hourlyData[2].time, ballard.hourlyData[2].pizzaSold, ballard.hourlyData[2].deliveriesMade, ballard.hourlyData[2].driversNeeded]);
+var fifthRow = generateDataRow([ballard.hourlyData[3].time, ballard.hourlyData[3].pizzaSold, ballard.hourlyData[3].deliveriesMade, ballard.hourlyData[3].driversNeeded]);
+var sixthRow = generateDataRow([ballard.hourlyData[3].time, ballard.hourlyData[3].pizzaSold, ballard.hourlyData[3].deliveriesMade, ballard.hourlyData[3].driversNeeded]);
+var seventhRow = generateDataRow([ballard.hourlyData[4].time, ballard.hourlyData[4].pizzaSold, ballard.hourlyData[4].deliveriesMade, ballard.hourlyData[4].driversNeeded]);
+var eighthRow = generateDataRow([ballard.hourlyData[5].time, ballard.hourlyData[5].pizzaSold, ballard.hourlyData[5].deliveriesMade, ballard.hourlyData[5].driversNeeded]);
+var ninthRow = generateDataRow([ballard.hourlyData[6].time, ballard.hourlyData[6].pizzaSold, ballard.hourlyData[6].deliveriesMade, ballard.hourlyData[6].driversNeeded]);
+var tenthRow = generateDataRow([ballard.hourlyData[7].time, ballard.hourlyData[7].pizzaSold, ballard.hourlyData[7].deliveriesMade, ballard.hourlyData[7].driversNeeded]);
+var elevnthRow = generateDataRow([ballard.hourlyData[8].time, ballard.hourlyData[8].pizzaSold, ballard.hourlyData[8].deliveriesMade, ballard.hourlyData[8].driversNeeded]);
+var twelveRow = generateDataRow([ballard.hourlyData[9].time, ballard.hourlyData[9].pizzaSold, ballard.hourlyData[9].deliveriesMade, ballard.hourlyData[9].driversNeeded]);
+var thirteenRow = generateDataRow([ballard.hourlyData[10].time, ballard.hourlyData[10].pizzaSold, ballard.hourlyData[10].deliveriesMade, ballard.hourlyData[10].driversNeeded]);
+var fourteenRow = generateDataRow([ballard.hourlyData[11].time, ballard.hourlyData[11].pizzaSold, ballard.hourlyData[11].deliveriesMade, ballard.hourlyData[11].driversNeeded]);
+var fiveteenRow = generateDataRow([ballard.hourlyData[12].time, ballard.hourlyData[12].pizzaSold, ballard.hourlyData[12].deliveriesMade, ballard.hourlyData[12].driversNeeded]);
+var sixteenRow = generateDataRow([ballard.hourlyData[13].time, ballard.hourlyData[13].pizzaSold, ballard.hourlyData[13].deliveriesMade, ballard.hourlyData[13].driversNeeded]);
+var seventeenRow = generateDataRow([ballard.hourlyData[14].time, ballard.hourlyData[14].pizzaSold, ballard.hourlyData[14].deliveriesMade, ballard.hourlyData[14].driversNeeded]);
+var eightteenRow = generateDataRow([ballard.hourlyData[15].time, ballard.hourlyData[15].pizzaSold, ballard.hourlyData[15].deliveriesMade, ballard.hourlyData[15].driversNeeded]);
+var nineteenRow = generateDataRow([ballard.hourlyData[16].time, ballard.hourlyData[16].pizzaSold, ballard.hourlyData[16].deliveriesMade, ballard.hourlyData[16].driversNeeded]);
+var twentyRow = generateDataRow([ballard.hourlyData[17].time, ballard.hourlyData[17].pizzaSold, ballard.hourlyData[17].deliveriesMade, ballard.hourlyData[17].driversNeeded]);
+
 
 ballardTable.appendChild(firstRow);
 ballardTable.appendChild(secondRow);
@@ -98,8 +116,11 @@ ballardTable.appendChild(thirteenRow);
 ballardTable.appendChild(fourteenRow);
 ballardTable.appendChild(fiveteenRow);
 ballardTable.appendChild(sixteenRow);
-ballardTable.appendChild(seventeenRown);
-ballardTable.apeendChild(EightteenRow);
+ballardTable.appendChild(seventeenRow);
+ballardTable.appendChild(eightteenRow);
+ballardTable.appendChild(nineteenRow);
+ballardTable.appendChild(twentyRow);
+
 document.getElementById('ballard').appendChild(ballardTable);
 
 
