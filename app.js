@@ -38,12 +38,12 @@ ballard.pushHourlyData(new hourlyData('11:00 pm', 8, 15, 6, 16));
 ballard.pushHourlyData(new hourlyData('Midnight', 8, 15, 6, 16));
 ballard.pushHourlyData(new hourlyData('1:00 am', 8, 15, 6, 16));
 
-function generateDataRow(name){
+function generateDataRow(arrayForColum){
   var row = document.createElement('tr');
   var col;
-  for (var i = 0; i < name.length; i++) {
+  for (var i = 0; i < arrayForColum.length; i++) {
     col = document.createElement('td');
-    col.textContent = name[i];
+    col.textContent = arrayForColum[i];
     row.appendChild(col);
   }
   return row;
@@ -60,13 +60,49 @@ function generateHeadingRow(data) {
   return row;
 }
 
+
+// var hourData;
+// for (var i = 0; i < ballard.hourlyData.length; i++) {
+//   hourData = ballard.hourlyData[i];
+//   hourData.time;
+//   console.log('hourData time');
+//   hourData.pizzaSold;
+//   console.log('hourData pizzaSold');
+//   hourData.deliveriesMade;
+//   console.log('hourData deliveriesMade');
+//   hourData.driversNeeded;
+//   console.log('hour driversNeeded');
+//
+// }
+
 var ballardTable = document.createElement('table');
 
 var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
-var secondRow = generateDataRow([hourlyData]);
+
+var secondRow = generateDataRow([ballard.hourlyData[0].time, ballard.hourlyData[0].pizzaSold, ballard.hourlyData[0].deliveriesMade, ballard.hourlyData[0].driversNeeded]);
+var thirdRow = generateDataRow([ballard.hourlyData[1].time, ballard.hourlyData[1].pizzaSold, ballard.hourlyData[1].deliveriesMade, ballard.hourlyData[1].driversNeeded]);
+
 ballardTable.appendChild(firstRow);
 ballardTable.appendChild(secondRow);
+ballardTable.appendChild(thirdRow);
+ballardTable.appendChild(fourthRow);
+ballardTable.appendChild(fifthRow);
+ballardTable.appendChild(sixthRow);
+ballardTable.appendChild(seventhRow);
+ballardTable.appendChild(eighthRow);
+ballardTable.appendChild(ninthRow);
+ballardTable.appendChild(tenthRow);
+ballardTable.appendChild(elevnthRow);
+ballardTable.appendChild(twelveRow);
+ballardTable.appendChild(thirteenRow);
+ballardTable.appendChild(fourteenRow);
+ballardTable.appendChild(fiveteenRow);
+ballardTable.appendChild(sixteenRow);
+ballardTable.appendChild(seventeenRown);
+ballardTable.apeendChild(EightteenRow);
 document.getElementById('ballard').appendChild(ballardTable);
+
+
 
 
 
