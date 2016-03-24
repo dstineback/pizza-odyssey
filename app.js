@@ -1,5 +1,12 @@
+'use space strict';
 console.log('javascript is working');
-//could not get total pizza to work yet. 
+
+function collectNewStore(event) {
+  event.preventDefault();
+  console.log('event target');
+
+}
+//could not get total pizza to work yet.
 //function totalPizza(storeLocation){
 //   for (var i = 0; i < storeLocation.hourlyData.length; i++){
 //     pizzaOdysseys += storeLocation.hourlyData[i].pizzaSold;
