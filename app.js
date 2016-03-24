@@ -1,13 +1,28 @@
 
 console.log('javascript is working');
 
+// //function newStoreTabelName(event) {
+//   event.preventDefault();
+//   console.log('event target');
+//   var  createStoreName = document.getElementById('location');
+//   console.log('New store name');
+//
+//   var createName = event.tartget.location.value;
+//   var tableHead = document.createElement('h1');
+//   tableHead.textContent = createName;
+//   tableHead.appendChild(tableHead);
+//
+// }
+// var createStoreNameforTable = document.getElementById('newStore');
+// //newstoreTableName.addEventListener('submit', newStoreTableName);
+
 function collectNewStore(event) {
   event.preventDefault();
   console.log('event target');
 
   var createStoreTable = document.getElementById('newStoreTable');
   console.log('new store table');
-
+// All the form input in variables
   var hours = event.target.hours.value;
   console.log('event hours');
   var minPizza = event.target.minPizza.value;
@@ -16,55 +31,46 @@ function collectNewStore(event) {
   console.log('event max pizza');
   var minDelivery = event.target.minDelivery.value;
   console.log('event min delivered');
-  var minDelivery = event.target.maxDelivery.value;
+  var maxDelivery = event.target.maxDelivery.value;
   console.log('event max delivered');
-
-  var hourRow = document.createElement('tr');
+// The Dom directions for each variable
+  var timeRow = document.createElement('tr');
   console.log('hour row');
+
   var hourColumn = document.createElement('td');
   console.log('hour column');
-
   hourColumn.textContent = hours;
-  hourRow.appendChild(hourColumn);
-  createStoreTable.appendChild(hourRow);
+  timeRow.appendChild(hourColumn);
+  createStoreTable.appendChild(timeRow);
 
-  var minPizzaRow = document.createElement('tr');
-  console.log('minPizza row');
   var minPizzaColumn = document.createElement('td');
-
   minPizzaColumn.textContent = minPizza;
-  minPizzaRow.appendChild(minPizzaColumn);
-  createStoreTable.appendChild(minPizzaRow);
+  timeRow.appendChild(minPizzaColumn);
+  createStoreTable.appendChild(timeRow);
 
-  var maxPizzaRow = document.createElement('tr');
   console.log('maxPizza row');
   var maxPizzaColumn = document.createElement('td');
+  maxPizzaColumn.textContent = maxPizza;
+  timeRow.appendChild(maxPizzaColumn);
+  createStoreTable.appendChild(timeRow);
 
-  maxPizzaColumn.textContent = maxPizzas;
-  maxPizzaRow.appendChild(maxPizzaColumn);
-  createStoreTable.appendChild(maxPizzaRow);
 
-  var minDeliveryRow = document.createElement('tr');
-  console.log('minDelivery row');
   var minDeliveryColumn = document.createElement('td');
+  minDeliveryColumn.textContent = minDelivery;
+  timeRow.appendChild(minDeliveryColumn);
+  createStoreTable.appendChild(timeRow);
 
-  minDeliveryColumn.textContent = minDeliverys;
-  minDeliveryRow.appendChild(minDeliveryColumn);
-  createStoreTable.appendChild(minDeliveryRow);
-
-  var maxDeliveryRow = document.createElement('tr');
-  console.log('maxDelivery row');
   var maxDeliveryColumn = document.createElement('td');
-
-  maxDeliveryColumn.textContent = maxDeliverys;
-  maxDeliveryRow.appendChild(maxDeliveryColumn);
-  createStoreTable.appendChild(minPizzaRow);
-
+  maxDeliveryColumn.textContent = maxDelivery;
+  timeRow.appendChild(maxDeliveryColumn);
+  createStoreTable.appendChild(timeRow);
 }
 
 var createStoreForm = document.getElementById('newStore');
 
 createStoreForm.addEventListener('submit', collectNewStore);
+
+
 
 //could not get total pizza to work yet.
 //function totalPizza(storeLocation){
