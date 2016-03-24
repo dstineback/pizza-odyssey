@@ -1,211 +1,392 @@
-console.log('java is working');
-//checking to make sure jave is working
-
-var timeArray = [];
-var ballardStore, firstHillStore, interDStore, sluStore, gTownStore, ravStore;
-var timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm;
-var driverNum;
-var driverAns;
+console.log('javascript is working');
+//could not get total pizza to work yet. 
+//function totalPizza(storeLocation){
+//   for (var i = 0; i < storeLocation.hourlyData.length; i++){
+//     pizzaOdysseys += storeLocation.hourlyData[i].pizzaSold;
+//   }
+// }
+// console.log('totalPizza');
+//
+// totalPizza(ballard);
+// console.log('totalPizza ballard');
+// totalPizza(hill);
+// console.log('totalPizza hill');
+// totalPizza(inter);
+// console.log('inter');
+// totalPizza(slu);
+// console.log('slu');
+// totalPizza(georg);
+// console.log('georg');
+// totalPizza(rav);
+// console.log('rav');
+//
+// document.getElementById('totalPizza').textContent = totalPizza, ' Happy pizza odysseys this week!';
 
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
-  console.log('math');
-};
+}
+console.log('math function');
 
-function driverReq(driverNum) {
-  driverNum = Math.ceil(DeliveryMade / 3);
-  if (driverNum === 0) {
-    driverAns = '[driver not recommended] ';
-    console.log('no driver');
-  } else {
-    driverAns = '[driver recommenede' + driverNum + ' ] ';
-    console.log('yes driver');
+function PizzaLocation(name) {
+  this.name = name;
+  this.hourlyData = [];
+}
+console.log('pizza location');
+
+PizzaLocation.prototype.pushhourlyData = function(data) {
+  this.hourlyData.push(data);
+};
+console.log('PizzaLocation prototype');
+
+function hourlyData(time, minPizzaSold, maxPizzaSold, minDeliveriesMade, maxDelieveries) {
+  this.time = time;
+  this.pizzaSold = getRandomIntInclusive(minPizzaSold, maxPizzaSold);
+  this.deliveriesMade = getRandomIntInclusive(minDeliveriesMade, maxDelieveries);
+  this.driversNeeded = Math.ceil(this.deliveriesMade / 3);
+}
+console.log('hourlyData function');
+
+//ballard store
+var ballard = new PizzaLocation('ballard');
+ballard.pushhourlyData(new hourlyData('8:00 am', 0, 3, 1, 7));
+ballard.pushhourlyData(new hourlyData('9:00 am', 0, 3, 1, 7));
+ballard.pushhourlyData(new hourlyData('10:00 am', 0, 3, 1, 7));
+ballard.pushhourlyData(new hourlyData('11:00 am', 5, 10, 2, 8));
+ballard.pushhourlyData(new hourlyData('Noon ', 5, 10, 2, 8));
+ballard.pushhourlyData(new hourlyData('1:00 pm', 5, 10, 2, 8));
+ballard.pushhourlyData(new hourlyData('2:00 pm', 2, 13, 1, 7));
+ballard.pushhourlyData(new hourlyData('3:00 pm', 2, 13, 1, 7));
+ballard.pushhourlyData(new hourlyData('4:00 pm', 2, 13, 1, 7));
+ballard.pushhourlyData(new hourlyData('5:00 pm', 2, 13, 1, 7));
+ballard.pushhourlyData(new hourlyData('6:00 pm', 0, 15, 2, 9));
+ballard.pushhourlyData(new hourlyData('7:00 pm', 0, 15, 2, 9));
+ballard.pushhourlyData(new hourlyData('8:00 pm', 1, 3, 4, 12));
+ballard.pushhourlyData(new hourlyData('9:00 pm', 1, 3, 4, 12));
+ballard.pushhourlyData(new hourlyData('10:00 pm', 1, 3, 4, 12));
+ballard.pushhourlyData(new hourlyData('11:00 pm', 8, 15, 6, 16));
+ballard.pushhourlyData(new hourlyData('Midnight', 8, 15, 6, 16));
+ballard.pushhourlyData(new hourlyData('1:00 am', 8, 15, 6, 16));
+
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
   }
-  return driverAns;
-};
+  return row;
+}
+console.log('generatDataRow function ballard');
 
-timeEightAm = {
-  time: '8:00',
-  PizzaSold: getRandomIntInclusive(0,4),
-  DeliveryMade: getRandomIntInclusive(0,4),
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function ballad');
 
-};
+var ballardTable = document.getElementById('ballard');
 
-timeNineAm = {
-  time: '9:00',
-  PizzaSold: getRandomIntInclusive(0,4),
-  DeliveryMade: getRandomIntInclusive(0,4),
-};
-timeTenAm = {
-  time: '10:00',
-  PizzaSold: getRandomIntInclusive(0,4),
-  DeliveryMade: getRandomIntInclusive(0,4),
-};
-timeElevenAm = {
-  time: '11:00',
-  PizzaSold: getRandomIntInclusive(0,7),
-  DeliveryMade: getRandomIntInclusive(0,4),
-};
-timeTwelvePm = {
-  time: '12:00pm',
-  PizzaSold: getRandomIntInclusive(0,7),
-  DeliveryMade: getRandomIntInclusive(0,4),
-};
-timeOnePm = {
-  time: '1:00pm',
-  PizzaSold: getRandomIntInclusive(0,7),
-  DeliveryMade: getRandomIntInclusive(0,4),
-};
-timeTwoPm = {
-  time: '2:00pm',
-  PizzaSold: getRandomIntInclusive(2,15),
-  DeliveryMade: getRandomIntInclusive(1,4),
-};
-timeThreePm = {
-  time: '3:00pm',
-  PizzaSold: getRandomIntInclusive(2,15),
-  DeliveryMade: getRandomIntInclusive(1,4),
-};
-timeFourPm = {
-  time: '4:00pm',
-  PizzaSold: getRandomIntInclusive(2,15),
-  DeliveryMade: getRandomIntInclusive(1,4),
-};
-timeFivePm = {
-  time: '5:00pm',
-  PizzaSold: getRandomIntInclusive(15,35),
-  DeliveryMade: getRandomIntInclusive(3,8),
-};
-timeSixPm = {
-  time: '6:00pm',
-  PizzaSold: getRandomIntInclusive(15,35),
-  DeliveryMade: getRandomIntInclusive(3,8),
-};
-timeSevenPm = {
-  time: '7:00pm',
-  PizzaSold: getRandomIntInclusive(15,35),
-  DeliveryMade: getRandomIntInclusive(3,8),
-};
-timeEightPm = {
-  time: '8:00pm',
-  PizzaSold: getRandomIntInclusive(12,31),
-  DeliveryMade: getRandomIntInclusive(5,12),
-};
-timeNinePm = {
-  time: '9:00pm',
-  PizzaSold: getRandomIntInclusive(12,31),
-  DeliveryMade: getRandomIntInclusive(5,12),
-};
-timeTenPm = {
-  time: '10:00pm',
-  PizzaSold: getRandomIntInclusive(12,31),
-  DeliveryMade: getRandomIntInclusive(5,12),
-};
-timeElevenPm = {
-  time: '11:00pm',
-  PizzaSold: getRandomIntInclusive(5,20),
-  DeliveryMade: getRandomIntInclusive(6,11),
-};
-timeTwelveAm = {
-  time: '12:00am',
-  PizzaSold: getRandomIntInclusive(5,20),
-  DeliveryMade: getRandomIntInclusive(6,11),
-};
-timeOneAm = {
-  time: '1:00am',
-  PizzaSold: getRandomIntInclusive(5,20),
-  DeliveryMade: getRandomIntInclusive(6,11),
-};
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+ballardTable.appendChild(firstRow);
+for (var i = 0; i < ballard.hourlyData.length; i++) {
 
-ballardStore = {
-  name: 'Ballard',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
+  var fancyRow = generateDataRow([ballard.hourlyData[i].time, ballard.hourlyData[i].pizzaSold, ballard.hourlyData[i].deliveriesMade, ballard.hourlyData[i].driversNeeded]);
 
-firstHillStore = {
-  name: 'First Hill',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
+  ballardTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop ballard');
 
-interDStore = {
-  name: 'Internation District',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
+//First Hill store
+var hill = new PizzaLocation('hill');
+hill.pushhourlyData(new hourlyData('8:00 am', 1, 3, 1, 7));
+hill.pushhourlyData(new hourlyData('9:00 am', 0, 3, 1, 7));
+hill.pushhourlyData(new hourlyData('10:00 am', 0, 3, 1, 7));
+hill.pushhourlyData(new hourlyData('11:00 am', 5, 9, 2, 8));
+hill.pushhourlyData(new hourlyData('Noon ', 5, 9, 2, 8));
+hill.pushhourlyData(new hourlyData('1:00 pm', 5, 9, 2, 8));
+hill.pushhourlyData(new hourlyData('2:00 pm', 2, 13, 1, 6));
+hill.pushhourlyData(new hourlyData('3:00 pm', 2, 13, 1, 6));
+hill.pushhourlyData(new hourlyData('4:00 pm', 2, 13, 1, 6));
+hill.pushhourlyData(new hourlyData('5:00 pm', 2, 13, 1, 6));
+hill.pushhourlyData(new hourlyData('6:00 pm', 18, 32, 3, 9));
+hill.pushhourlyData(new hourlyData('7:00 pm', 18, 32, 3, 9));
+hill.pushhourlyData(new hourlyData('8:00 pm', 1, 3, 5, 12));
+hill.pushhourlyData(new hourlyData('9:00 pm', 1, 3, 5, 12));
+hill.pushhourlyData(new hourlyData('10:00 pm', 1, 3, 5, 12));
+hill.pushhourlyData(new hourlyData('11:00 pm', 8, 20, 6, 16));
+hill.pushhourlyData(new hourlyData('Midnight', 8, 20, 6, 16));
+hill.pushhourlyData(new hourlyData('1:00 am', 8, 20, 6, 16));
 
-sluStore = {
-  name: 'South Lake Union',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
-gTownStore = {
-  name: 'GeorgeTown',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
-ravStore = {
-  name: 'Ravenna ',
-  storeHours: '8:00am to 2:00am, Tuesday - Sunday, Closed on Mondays.',
-  salesData: timeArray
-};
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
+  }
+  return row;
+}
 
-timeArray.push(timeEightAm, timeNineAm, timeTenAm, timeElevenAm, timeTwelvePm, timeOnePm, timeTwoPm, timeThreePm, timeFourPm, timeFivePm, timeSixPm, timeSevenPm, timeEightPm, timeNinePm, timeTenPm, timeElevenPm, timeTwelveAm, timeOneAm);
+console.log('generatDataRow function hill');
 
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','ballard');
-  liTag.textContent = ballardStore.salesData[i].time + ' pizza: ' + ballardStore.salesData[i].PizzaSold + ' deliveries:    ' + ballardStore.salesData[i].DeliveryMade + '' + driverAns;
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function hill');
 
-  document.getElementById('ballard').appendChild(liTag);
-  console.log('ballard loop');
-};
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','firstHill');
-  liTag.textContent = firstHillStore.salesData[i].time + ' pizza: ' + firstHillStore.salesData[i].PizzaSold + ' deliveries:    ' + firstHillStore.salesData[i].DeliveryMade + '' + driverAns;
+var hillTable = document.getElementById('hill');
 
-  document.getElementById('firstHill').appendChild(liTag);
-  console.log('first hill loop');
-};
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+hillTable.appendChild(firstRow);
+for (var i = 0; i < hill.hourlyData.length; i++) {
 
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','internation');
-  liTag.textContent = interDStore.salesData[i].time + ' pizza: ' + interDStore.salesData[i].PizzaSold + ' deliveries:    ' + interDStore.salesData[i].DeliveryMade + '' + driverAns;
+  var fancyRow = generateDataRow([hill.hourlyData[i].time, hill.hourlyData[i].pizzaSold, hill.hourlyData[i].deliveriesMade, hill.hourlyData[i].driversNeeded]);
 
-  document.getElementById('interD').appendChild(liTag);
-  console.log('Internation loop');
-};
+  hillTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop hill');
 
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','slu');
-  liTag.textContent = sluStore.salesData[i].time + ' pizza: ' + sluStore.salesData[i].PizzaSold + ' deliveries:    ' + sluStore.salesData[i].DeliveryMade + '' + driverAns;
+//inter Store info
+var inter = new PizzaLocation('inter');
+inter.pushhourlyData(new hourlyData('8:00 am', 0, 4, 0, 4));
+inter.pushhourlyData(new hourlyData('9:00 am', 0, 4, 0, 4));
+inter.pushhourlyData(new hourlyData('10:00 am', 0, 4, 0, 4));
+inter.pushhourlyData(new hourlyData('11:00 am', 0, 7, 0, 4));
+inter.pushhourlyData(new hourlyData('Noon ', 0, 7, 0, 4));
+inter.pushhourlyData(new hourlyData('1:00 pm', 0, 7, 0, 4));
+inter.pushhourlyData(new hourlyData('2:00 pm', 2, 15, 1, 4));
+inter.pushhourlyData(new hourlyData('3:00 pm', 2, 15, 1, 4));
+inter.pushhourlyData(new hourlyData('4:00 pm', 2, 15, 1, 4));
+inter.pushhourlyData(new hourlyData('5:00 pm', 10, 26, 1, 6));
+inter.pushhourlyData(new hourlyData('6:00 pm', 10, 26, 1, 6));
+inter.pushhourlyData(new hourlyData('7:00 pm', 10, 26, 1, 6));
+inter.pushhourlyData(new hourlyData('8:00 pm', 8, 22, 7, 15));
+inter.pushhourlyData(new hourlyData('9:00 pm', 8, 22, 7, 15));
+inter.pushhourlyData(new hourlyData('10:00 pm', 8, 22, 7, 15));
+inter.pushhourlyData(new hourlyData('11:00 pm', 0, 2, 2, 8));
+inter.pushhourlyData(new hourlyData('Midnight', 0, 2, 2, 8));
+inter.pushhourlyData(new hourlyData('1:00 am', 0, 2, 2, 8));
 
-  document.getElementById('slu').appendChild(liTag);
-  console.log('slu loop');
-};
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','gTown');
-  liTag.textContent = gTownStore.salesData[i].time + ' pizza: ' + gTownStore.salesData[i].PizzaSold + ' deliveries:    ' + gTownStore.salesData[i].DeliveryMade + '' + driverAns;
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generatDataRow function inter');
 
-  document.getElementById('gTown').appendChild(liTag);
-  console.log('gTown loop');
-};
-for (var i = 0; i < timeArray.length; i++) {
-  timeArray[i];
-  var liTag = document.createElement('li');
-  liTag.setAttribute('id','rav');
-  liTag.textContent = ravStore.salesData[i].time + ' pizza: ' + ravStore.salesData[i].PizzaSold + ' deliveries:    ' + ravStore.salesData[i].DeliveryMade + '' + driverAns;
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function inter');
 
-  document.getElementById('rav').appendChild(liTag);
-  console.log('rav loop');
-};
+var interTable = document.getElementById('inter');
+
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+interTable.appendChild(firstRow);
+for (var i = 0; i < inter.hourlyData.length; i++) {
+
+  var fancyRow = generateDataRow([inter.hourlyData[i].time, inter.hourlyData[i].pizzaSold, inter.hourlyData[i].deliveriesMade, inter.hourlyData[i].driversNeeded]);
+
+  interTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop inter');
+
+//South Lake Union store
+var slu = new PizzaLocation('slu');
+slu.pushhourlyData(new hourlyData('8:00 am', 0, 4, 0, 4));
+slu.pushhourlyData(new hourlyData('9:00 am', 0, 4, 0, 4));
+slu.pushhourlyData(new hourlyData('10:00 am', 0, 4, 0, 4));
+slu.pushhourlyData(new hourlyData('11:00 am', 0, 7, 0, 4));
+slu.pushhourlyData(new hourlyData('Noon ', 0, 7, 0, 4));
+slu.pushhourlyData(new hourlyData('1:00 pm', 0, 7, 0, 4));
+slu.pushhourlyData(new hourlyData('2:00 pm', 5, 15, 0, 4));
+slu.pushhourlyData(new hourlyData('3:00 pm', 5, 15, 0, 4));
+slu.pushhourlyData(new hourlyData('4:00 pm', 5, 15, 0, 4));
+slu.pushhourlyData(new hourlyData('5:00 pm', 25, 39, 13, 18));
+slu.pushhourlyData(new hourlyData('6:00 pm', 25, 39, 13, 18));
+slu.pushhourlyData(new hourlyData('7:00 pm', 25, 39, 13, 18));
+slu.pushhourlyData(new hourlyData('8:00 pm', 22, 36, 5, 22));
+slu.pushhourlyData(new hourlyData('9:00 pm', 22, 36, 5, 22));
+slu.pushhourlyData(new hourlyData('10:00 pm', 22, 36, 5, 22));
+slu.pushhourlyData(new hourlyData('11:00 pm', 5, 25, 5, 31));
+slu.pushhourlyData(new hourlyData('Midnight', 5, 25, 5, 31));
+slu.pushhourlyData(new hourlyData('1:00 am', 5, 25, 5, 31));
+
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generatDataRow function slu');
+
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function slu');
+
+var sluTable = document.getElementById('slu');
+
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+sluTable.appendChild(firstRow);
+for (var i = 0; i < slu.hourlyData.length; i++) {
+
+  var fancyRow = generateDataRow([slu.hourlyData[i].time, slu.hourlyData[i].pizzaSold, slu.hourlyData[i].deliveriesMade, slu.hourlyData[i].driversNeeded]);
+
+  sluTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop slu');
+
+//Georgetown store
+var georg = new PizzaLocation('georg');
+georg.pushhourlyData(new hourlyData('8:00 am', 2, 7, 3, 5));
+georg.pushhourlyData(new hourlyData('9:00 am', 2, 7, 3, 5));
+georg.pushhourlyData(new hourlyData('10:00 am', 2, 7, 3, 5));
+georg.pushhourlyData(new hourlyData('11:00 am', 3, 8, 3, 9));
+georg.pushhourlyData(new hourlyData('Noon ', 3, 8, 3, 9));
+georg.pushhourlyData(new hourlyData('1:00 pm', 3, 8, 3, 9));
+georg.pushhourlyData(new hourlyData('2:00 pm', 1, 5, 1, 4));
+georg.pushhourlyData(new hourlyData('3:00 pm', 1, 5, 1, 4));
+georg.pushhourlyData(new hourlyData('4:00 pm', 1, 5, 1, 4));
+georg.pushhourlyData(new hourlyData('5:00 pm', 5, 13, 2, 4));
+georg.pushhourlyData(new hourlyData('6:00 pm', 5, 13, 2, 4));
+georg.pushhourlyData(new hourlyData('7:00 pm', 5, 13, 2, 4));
+georg.pushhourlyData(new hourlyData('8:00 pm', 22, 41, 15, 42));
+georg.pushhourlyData(new hourlyData('9:00 pm', 22, 41, 15, 42));
+georg.pushhourlyData(new hourlyData('10:00 pm', 22, 41, 15, 42));
+georg.pushhourlyData(new hourlyData('11:00 pm', 15, 20, 6, 21));
+georg.pushhourlyData(new hourlyData('Midnight', 15, 20, 6, 21));
+georg.pushhourlyData(new hourlyData('1:00 am', 15, 20, 6, 21));
+
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generatDataRow function georg');
+
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function georg');
+
+var georgTable = document.getElementById('georg');
+
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+georgTable.appendChild(firstRow);
+for (var i = 0; i < georg.hourlyData.length; i++) {
+
+  var fancyRow = generateDataRow([georg.hourlyData[i].time, georg.hourlyData[i].pizzaSold, georg.hourlyData[i].deliveriesMade, georg.hourlyData[i].driversNeeded]);
+
+  georgTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop georg');
+
+//rav store
+var rav = new PizzaLocation('rav');
+rav.pushhourlyData(new hourlyData('8:00 am', 0, 4, 0, 4));
+rav.pushhourlyData(new hourlyData('9:00 am', 0, 4, 0, 4));
+rav.pushhourlyData(new hourlyData('10:00 am', 0, 4, 0, 4));
+rav.pushhourlyData(new hourlyData('11:00 am', 0, 7, 0, 4));
+rav.pushhourlyData(new hourlyData('Noon ', 0, 7, 0, 4));
+rav.pushhourlyData(new hourlyData('1:00 pm', 0, 7, 0, 4));
+rav.pushhourlyData(new hourlyData('2:00 pm', 2, 15, 1, 4));
+rav.pushhourlyData(new hourlyData('3:00 pm', 2, 15, 1, 4));
+rav.pushhourlyData(new hourlyData('4:00 pm', 2, 15, 1, 4));
+rav.pushhourlyData(new hourlyData('5:00 pm', 6, 9, 5, 18));
+rav.pushhourlyData(new hourlyData('6:00 pm', 6, 9, 5, 18));
+rav.pushhourlyData(new hourlyData('7:00 pm', 6, 9, 5, 18));
+rav.pushhourlyData(new hourlyData('8:00 pm', 4, 8, 2, 5));
+rav.pushhourlyData(new hourlyData('9:00 pm', 4, 8, 2, 5));
+rav.pushhourlyData(new hourlyData('10:00 pm', 4, 8, 2, 5));
+rav.pushhourlyData(new hourlyData('11:00 pm', 2, 4, 3, 11));
+rav.pushhourlyData(new hourlyData('Midnight', 2, 4, 3, 11));
+rav.pushhourlyData(new hourlyData('1:00 am', 2, 4, 3, 11));
+
+function generateDataRow(arrayForColum){
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < arrayForColum.length; i++) {
+    col = document.createElement('td');
+    col.textContent = arrayForColum[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generatDataRow function rav');
+
+function generateHeadingRow(data) {
+  var row = document.createElement('tr');
+  var col;
+  for (var i = 0; i < data.length; i++) {
+    col = document.createElement('th');
+    col.textContent = data[i];
+    row.appendChild(col);
+  }
+  return row;
+}
+console.log('generateHeadingRow function rav');
+
+var ravTable = document.getElementById('rav');
+
+var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+ravTable.appendChild(firstRow);
+for (var i = 0; i < rav.hourlyData.length; i++) {
+
+  var fancyRow = generateDataRow([rav.hourlyData[i].time, rav.hourlyData[i].pizzaSold, rav.hourlyData[i].deliveriesMade, rav.hourlyData[i].driversNeeded]);
+
+  ravTable.appendChild(fancyRow);
+}
+console.log('fancyRow for loop rav');
+
+console.log('end of javascript');
