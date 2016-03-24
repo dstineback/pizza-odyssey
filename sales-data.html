@@ -5,7 +5,7 @@
     <title>Sales Data</title>
   </head>
   <body>
-    <form >
+    <form id="newStore">
       <fieldset>
         <legend>New Store</legend>
           <label name="location">Store location:</label>
@@ -14,17 +14,17 @@
           <label name="hours">Hours</label>
           <input name="hours" type="text" size="10">
 
-          <label name="min-pizza">Min Pizza</label>
-          <input name+"min-pizza" type="text" size="10">
+          <label name="minPizza">Min Pizza</label>
+          <input name="minPizza" type="text" size="10">
 
-          <label name="max-pizza">Max Pizza</label>
-          <input name="max-pizza" type="text" size="10">
+          <label name="maxPizza">Max Pizza</label>
+          <input name="maxPizza" type="text" size="10">
 
-          <label name="min-delivery">Min Deliverd</label>
-          <input name="min-delivery" type="text" size="10">
+          <label name="minDelivery">Min Deliverd</label>
+          <input name="minDelivery" type="text" size="10">
 
-          <label name="max-delivery">Max Deliverd<label>
-          <input name="max-delivery" type="text" size="10">
+          <label name="maxDelivery">Max Deliverd<label>
+          <input name="maxDelivery" type="text" size="10">
 
           <button type="submit">Submit</button>
 
@@ -58,7 +58,15 @@
         <table id="rav"></table>
     </section>
     <section>
-      <table id="newStore">
+      <table id="newStoreTable">
+        <thead> Table </thead>
+          <tr>
+              <th>Hour</th>
+              <th>Pizza Sold</th>
+              <th>Pizza Deliverd</th>
+              <th>Drivers Needed</th>
+          </tr>
+
       </table>
     </section>
     <script src="app.js" type="text/javascript"></script>
