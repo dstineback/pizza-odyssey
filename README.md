@@ -16,3 +16,4 @@ added all the data to a table for each store
 
 ##index
 list of stores and hours of operatoins
+ptag is used as a place holder for a picture to be provided later
