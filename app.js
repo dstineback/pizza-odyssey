@@ -4,20 +4,19 @@
 
 function runTable(dataLocation) {
 
-  var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
-  var dataTable = document.createElement('table');
   var hOneChange = document.createElement('h1');
-  dataTable.textContent = dataLocation.name;
-  document.getElementById('special').appendChild(dataTable);
+  hOneChange.textContent = dataLocation.name;
   document.getElementById('special').appendChild(hOneChange);
+
+  var dataTable = document.createElement('table');
+  var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
   dataTable.appendChild(firstRow);
-
   var makeTableData = document.getElementById('special');
-
   for (var i = 0; i < dataLocation.hourlyData.length; i++) {
     var fancyRow = generateDataRow([dataLocation.hourlyData[i].time, dataLocation.hourlyData[i].pizzaSold,   dataLocation.hourlyData[i].deliveriesMade, dataLocation.hourlyData[i].driversNeeded]);
     dataTable.appendChild(fancyRow);
   }
+  document.getElementById('special').appendChild(dataTable);
 }
 
 function collectNewStore(event) {
@@ -134,7 +133,7 @@ function collectNewStore(event) {
   var maxDelivery1am = parseInt(event.target.maxDelivery1am.value);
 
   //data being pushed into new constructor
-  var formCreatedStore = new PizzaLocation('special');
+  var formCreatedStore = new PizzaLocation(storeName);
   formCreatedStore.pushhourlyData(new hourlyData(hours8am, minPizza8am, maxPizza8am, minDelivery8am, maxDelivery8am));
   formCreatedStore.pushhourlyData(new hourlyData(hours9am, minPizza9am, maxPizza9am, minDelivery9am, maxDelivery9am));
   formCreatedStore.pushhourlyData(new hourlyData(hours10am, minPizza10am, maxPizza10am, minDelivery10am, maxDelivery10am));
@@ -155,7 +154,6 @@ function collectNewStore(event) {
   formCreatedStore.pushhourlyData(new hourlyData(hoursMidnight, minPizzaMidnight, maxPizzaMidnight, minDeliveryMidnight, maxDeliveryMidnight));
   formCreatedStore.pushhourlyData(new hourlyData(hours1am, minPizza1am, maxPizza1am, minDelivery1am, maxDelivery1am));
   //Name that the user imputs will display above the table
-  formCreatedStore.name = storeName;
   runTable(formCreatedStore);
 }
 
