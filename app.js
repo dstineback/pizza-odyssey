@@ -1,33 +1,15 @@
 
 console.log('javascript is working');
 
-// function newStoreTableName(event) {
-//   event.preventDefault();
-//   console.log('event target');
-//   var  createStoreName = document.getElementById('newStore');
-//   console.log('New store name');
-//
-//   var createName = event.tartget.createName.value;
-//   var tableHead = document.createElement('h1');
-//   tableHead.textContent = createName;
-//   tableHead.appendChild(tableHead);
-// }
-// console.log('Store name function');
-//
-// var createStoreNameforTable = document.getElementById('newStore');
-// createStoreNameforTable.addEventListener('submit', newStoreTableName);
-
-function collectNewStore(event) {
+function collectNewStore(event){
   event.preventDefault();
-  console.log('event target');
 
-  var createStoreTable = document.getElementById('newStoreTable');
-  console.log('new store table');
-// All the form input in variables
   var storeName = event.target.storeName.value;
   console.log('storeName');
+
   var hours = event.target.hours.value;
   console.log('event hours');
+
   var minPizza = event.target.minPizza.value;
   console.log('event min Pizza');
   var maxPizza = event.target.maxPizza.value;
@@ -36,48 +18,93 @@ function collectNewStore(event) {
   console.log('event min delivered');
   var maxDelivery = event.target.maxDelivery.value;
   console.log('event max delivered');
-// The Dom directions for each variable
+
+  var userLocation = new PizzaLocation(storeName);
+  var salesData = new SalesData(hour, minPizza, maxPizza, minDelivery, maxDelivery);
+  userLocation.pushhourlyData(SalesData);
+  console.log(userLocation);
+
+  var userTable = document.createElement('table');
+
   var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
-  ballardTable.appendChild(firstRow);
+  userTable.appendChild(firstRow);
+  for (var i = 0; i < user.hourlyData.length; i++) {
 
-  var timeRow = document.createElement('tr');
-  console.log('hour row');
+    var fancyRow = generateDataRow([user.hourlyData[i].time, user.hourlyData[i].pizzaSold, user.hourlyData[i].deliveriesMade, user.hourlyData[i].driversNeeded]);
 
-  var storeNameColumn = document.createElement('td');
-  console.log('name colum');
-  storeNameColumn.textContent = storeName;
-  timeRow.appendChild(storeNameColumn);
-  createStoreTable.appendChild(timeRow);
-
-  var hourColumn = document.createElement('td');
-  console.log('hour column');
-  hourColumn.textContent = hours;
-  timeRow.appendChild(hourColumn);
-  createStoreTable.appendChild(timeRow);
-
-  var minPizzaColumn = document.createElement('td');
-  minPizzaColumn.textContent = minPizza;
-  timeRow.appendChild(minPizzaColumn);
-  createStoreTable.appendChild(timeRow);
-
-  console.log('maxPizza row');
-  var maxPizzaColumn = document.createElement('td');
-  maxPizzaColumn.textContent = maxPizza;
-  timeRow.appendChild(maxPizzaColumn);
-  createStoreTable.appendChild(timeRow);
-
-  var minDeliveryColumn = document.createElement('td');
-  minDeliveryColumn.textContent = minDelivery;
-  timeRow.appendChild(minDeliveryColumn);
-  createStoreTable.appendChild(timeRow);
-
-  var maxDeliveryColumn = document.createElement('td');
-  maxDeliveryColumn.textContent = maxDelivery;
-  timeRow.appendChild(maxDeliveryColumn);
-
-  createStoreTable.appendChild(timeRow);
+    userTable.appendChild(fancyRow);
+  }
+  var userLocationSection;
+  document.getElementById('name of ide for table');
+  var userTableHeading = document.createElement('h1');
+  userTableHeading.textContent = locationName;
+  userLocationSection.appendChild(userTable);
 
 }
+
+// function collectNewStore(event) {
+//   event.preventDefault();
+//   console.log('event target');
+//
+//   var createStoreTable = document.getElementById('newStoreTable');
+//   console.log('new store table');
+//   var getLocationData = document.createElement('table');
+//   var getLocationTitle = document.createElement('h1');
+// // All the form input in variables
+//   var storeName = event.target.storeName.value;
+//   console.log('storeName');
+//   var hours = event.target.hours.value;
+//   console.log('event hours');
+//   var minPizza = event.target.minPizza.value;
+//   console.log('event min Pizza');
+//   var maxPizza = event.target.maxPizza.value;
+//   console.log('event max pizza');
+//   var minDelivery = event.target.minDelivery.value;
+//   console.log('event min delivered');
+//   var maxDelivery = event.target.maxDelivery.value;
+//   console.log('event max delivered');
+// // The Dom directions for each variable
+//   var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
+//   ballardTable.appendChild(firstRow);
+//
+//   var timeRow = document.createElement('tr');
+//   console.log('hour row');
+//
+//   var storeNameColumn = document.createElement('td');
+//   console.log('name colum');
+//   storeNameColumn.textContent = storeName;
+//   timeRow.appendChild(storeNameColumn);
+//   createStoreTable.appendChild(timeRow);
+//
+//   var hourColumn = document.createElement('td');
+//   console.log('hour column');
+//   hourColumn.textContent = hours;
+//   timeRow.appendChild(hourColumn);
+//   createStoreTable.appendChild(timeRow);
+//
+//   var minPizzaColumn = document.createElement('td');
+//   minPizzaColumn.textContent = minPizza;
+//   timeRow.appendChild(minPizzaColumn);
+//   createStoreTable.appendChild(timeRow);
+//
+//   console.log('maxPizza row');
+//   var maxPizzaColumn = document.createElement('td');
+//   maxPizzaColumn.textContent = maxPizza;
+//   timeRow.appendChild(maxPizzaColumn);
+//   createStoreTable.appendChild(timeRow);
+//
+//   var minDeliveryColumn = document.createElement('td');
+//   minDeliveryColumn.textContent = minDelivery;
+//   timeRow.appendChild(minDeliveryColumn);
+//   createStoreTable.appendChild(timeRow);
+//
+//   var maxDeliveryColumn = document.createElement('td');
+//   maxDeliveryColumn.textContent = maxDelivery;
+//   timeRow.appendChild(maxDeliveryColumn);
+//
+//   createStoreTable.appendChild(timeRow);
+//
+// }
 
 var createStoreForm = document.getElementById('newStore');
 
