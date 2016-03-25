@@ -16,8 +16,6 @@ function collectNewStore(event) {
   var minDelivery8am = event.target.minDelivery8am.value;
   var maxDelivery8am = event.target.maxDelivery8am.value;
 
-// The Dom directions for each variable
-
   var timeRow = document.createElement('tr');
 
   var storeNameColumn = document.createElement('td');
@@ -52,21 +50,18 @@ function collectNewStore(event) {
 
   //
 
-
-//  var hours9am = event.target.hours9am.value;
+  var hours9am = event.target.hours9am.value;
   var minPizza9am = event.target.minPizza9am.value;
   var maxPizza9am = event.target.maxPizza9am.value;
   var minDelivery9am = event.target.minDelivery9am.value;
   var maxDelivery9am = event.target.maxDelivery9am.value;
 
-// The Dom directions for each variable
-
   var timeRow9am = document.createElement('tr');
 
-// //  var storeNameColumn9am = document.createElement('td');
-//   storeNameColumn9am.textContent = storeNameColumn;
-//   timeRow9am.appendChild(storeNameColumn9am);
-//   createStoreTable.appendChild(timeRow9am);
+  var storeNameColumn9am = document.createElement('td');
+  storeNameColumn9am.textContent = storeNameColumn;
+  timeRow9am.appendChild(storeNameColumn9am);
+  createStoreTable.appendChild(timeRow9am);
 
   var hourColumn9am = document.createElement('td');
   hourColumn9am.textContent = hours9am;
@@ -92,8 +87,6 @@ function collectNewStore(event) {
   maxDeliveryColumn9am.textContent = maxDelivery9am;
   timeRow9am.appendChild(maxDeliveryColumn9am);
   createStoreTable.appendChild(timeRow9am);
-
-//
 
   var hours10am = event.target.hours10am.value;
   var minPizza10am = event.target.minPizza10am.value;
@@ -139,8 +132,6 @@ function collectNewStore(event) {
   var minDelivery11am = event.target.minDelivery11am.value;
   var maxDelivery11am = event.target.maxDelivery11am.value;
 
-// The Dom directions for each variable
-
   var timeRow11am = document.createElement('tr');
 
   var storeNameColumn11am = document.createElement('td');
@@ -178,8 +169,6 @@ function collectNewStore(event) {
   var maxPizzaNoon = event.target.maxPizzaNoon.value;
   var minDeliveryNoon = event.target.minDeliveryNoon.value;
   var maxDeliveryNoon = event.target.maxDeliveryNoon.value;
-
-// The Dom directions for each variable
 
   var timeRowNoon = document.createElement('tr');
 
@@ -219,8 +208,6 @@ function collectNewStore(event) {
   var minDelivery1pm = event.target.minDelivery1pm.value;
   var maxDelivery1pm = event.target.maxDelivery1pm.value;
 
-// The Dom directions for each variable
-
   var timeRow1pm = document.createElement('tr');
 
   var storeNameColumn1pm = document.createElement('td');
@@ -259,8 +246,6 @@ function collectNewStore(event) {
   var minDelivery2pm = event.target.minDelivery2pm.value;
   var maxDelivery2pm = event.target.maxDelivery2pm.value;
 
-// The Dom directions for each variable
-
   var timeRow2pm = document.createElement('tr');
 
   var storeNameColumn2pm = document.createElement('td');
@@ -298,8 +283,6 @@ function collectNewStore(event) {
   var maxPizza3pm = event.target.maxPizza3pm.value;
   var minDelivery3pm = event.target.minDelivery3pm.value;
   var maxDelivery3pm = event.target.maxDelivery3pm.value;
-
-// The Dom directions for each variable
 
   var timeRow3pm = document.createElement('tr');
 
@@ -419,8 +402,6 @@ function collectNewStore(event) {
   var minDelivery5pm = event.target.minDelivery5pm.value;
   var maxDelivery5pm = event.target.maxDelivery5pm.value;
 
-// The Dom directions for each variable
-
   var timeRow5pm = document.createElement('tr');
 
   var storeNameColumn5pm = document.createElement('td');
@@ -458,8 +439,6 @@ function collectNewStore(event) {
   var maxPizza6pm = event.target.maxPizza6pm.value;
   var minDelivery6pm = event.target.minDelivery6pm.value;
   var maxDelivery6pm = event.target.maxDelivery6pm.value;
-
-// The Dom directions for each variable
 
   var timeRow6pm = document.createElement('tr');
 
@@ -499,8 +478,6 @@ function collectNewStore(event) {
   var minDelivery7pm = event.target.minDelivery7pm.value;
   var maxDelivery7pm = event.target.maxDelivery7pm.value;
 
-// The Dom directions for each variable
-
   var timeRow7pm = document.createElement('tr');
 
   var storeNameColumn7pm = document.createElement('td');
@@ -538,8 +515,6 @@ function collectNewStore(event) {
   var maxPizza7pm = event.target.maxPizza7pm.value;
   var minDelivery7pm = event.target.minDelivery7pm.value;
   var maxDelivery7pm = event.target.maxDelivery7pm.value;
-
-// The Dom directions for each variable
 
   var timeRow7pm = document.createElement('tr');
 
@@ -619,8 +594,6 @@ function collectNewStore(event) {
   var minDelivery9pm = event.target.minDelivery9pm.value;
   var maxDelivery9pm = event.target.maxDelivery9pm.value;
 
-// The Dom directions for each variable
-
   var timeRow9pm = document.createElement('tr');
 
   var storeNameColumn9pm = document.createElement('td');
@@ -658,8 +631,6 @@ function collectNewStore(event) {
   var maxPizza10pm = event.target.maxPizza10pm.value;
   var minDelivery10pm = event.target.minDelivery10pm.value;
   var maxDelivery10pm = event.target.maxDelivery10pm.value;
-
-// The Dom directions for each variable
 
   var timeRow10pm = document.createElement('tr');
 
@@ -699,8 +670,6 @@ function collectNewStore(event) {
   var minDelivery11pm = event.target.minDelivery11pm.value;
   var maxDelivery11pm = event.target.maxDelivery11pm.value;
 
-// The Dom directions for each variable
-
   var timeRow11pm = document.createElement('tr');
 
   var storeNameColumn11pm = document.createElement('td');
@@ -739,8 +708,6 @@ function collectNewStore(event) {
   var minDeliveryMidnight = event.target.minDeliveryMidnight.value;
   var maxDeliveryMidnight = event.target.maxDeliveryMidnight.value;
 
-// The Dom directions for each variable
-
   var timeRowMidnight = document.createElement('tr');
 
   var storeNameColumnMidnight = document.createElement('td');
@@ -778,8 +745,6 @@ function collectNewStore(event) {
   var maxPizza1am = event.target.maxPizza1am.value;
   var minDelivery1am = event.target.minDelivery1am.value;
   var maxDelivery1am = event.target.maxDelivery1am.value;
-
-// The Dom directions for each variable
 
   var timeRow1am = document.createElement('tr');
 
