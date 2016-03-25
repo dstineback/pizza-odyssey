@@ -137,6 +137,23 @@ function collectNewStore(event) {
   var formCreatedStore = new PizzaLocation('special');
   formCreatedStore.pushhourlyData(new hourlyData(hours8am, minPizza8am, maxPizza8am, minDelivery8am, maxDelivery8am));
   formCreatedStore.pushhourlyData(new hourlyData(hours9am, minPizza9am, maxPizza9am, minDelivery9am, maxDelivery9am));
+  formCreatedStore.pushhourlyData(new hourlyData(hours10am, minPizza10am, maxPizza10am, minDelivery10am, maxDelivery10am));
+  formCreatedStore.pushhourlyData(new hourlyData(hours11am, minPizza11am, maxPizza11am, minDelivery11am, maxDelivery11am));
+  formCreatedStore.pushhourlyData(new hourlyData(hours11am, minPizza11am, maxPizza11am, minDelivery11am, maxDelivery11am));
+  formCreatedStore.pushhourlyData(new hourlyData(hoursNoon, minPizzaNoon, maxPizzaNoon, minDeliveryNoon, maxDeliveryNoon));
+  formCreatedStore.pushhourlyData(new hourlyData(hours1pm, minPizza1pm, maxPizza1pm, minDelivery1pm, maxDelivery1pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours2pm, minPizza2pm, maxPizza2pm, minDelivery2pm, maxDelivery2pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours3pm, minPizza3pm, maxPizza3pm, minDelivery3pm, maxDelivery3pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours4pm, minPizza4pm, maxPizza4pm, minDelivery4pm, maxDelivery4pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours5pm, minPizza5pm, maxPizza5pm, minDelivery5pm, maxDelivery5pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours6pm, minPizza6pm, maxPizza6pm, minDelivery6pm, maxDelivery6pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours7pm, minPizza7pm, maxPizza7pm, minDelivery7pm, maxDelivery7pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours8pm, minPizza8pm, maxPizza8pm, minDelivery8pm, maxDelivery8pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours9pm, minPizza9pm, maxPizza9pm, minDelivery9pm, maxDelivery9pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours10pm, minPizza10pm, maxPizza10pm, minDelivery10pm, maxDelivery10pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hours11pm, minPizza11pm, maxPizza11pm, minDelivery11pm, maxDelivery11pm));
+  formCreatedStore.pushhourlyData(new hourlyData(hoursMidnight, minPizzaMidnight, maxPizzaMidnight, minDeliveryMidnight, maxDeliveryMidnight));
+  formCreatedStore.pushhourlyData(new hourlyData(hours1am, minPizza1am, maxPizza1am, minDelivery1am, maxDelivery1am));
 
   formCreatedStore.name = storeName;
   runTable(formCreatedStore);
