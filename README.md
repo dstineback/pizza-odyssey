@@ -11,7 +11,7 @@ used a solid background color
 imported a google font 'Droid Sans Mono'  
 
 ##sales-data  
-made sections for each store  
+Used one section to import the data tables to.  
 added all the data to a table for each store
 
 ##index
