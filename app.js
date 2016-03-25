@@ -1,6 +1,5 @@
 
-console.log('javascript is working');
-
+//Note to instructors I deleted all the console logs once I was able to get it working
 //function to run all the table info. Call function at the end of code for ballard, First Hill, Internationl District, South Lake Union, Georgetown, Ravenna. Call function inside of the form funtion for table being inputed by user.
 
 function runTable(dataLocation) {
