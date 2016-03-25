@@ -1,22 +1,20 @@
 
 console.log('javascript is working');
 
-function runTable(datalocation) {
+function runTable(dataLocation) {
 
   var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
   var dataTable = document.createElement('table');
   var hOneChange = document.createElement('h1');
-  dataTable.textContent = datalocation.name;
-  document.getElementById('table').appendChild(dataTable);
-  document.getElementById('table').appendChild(hOneChange);
+  dataTable.textContent = dataLocation.name;
+  document.getElementById('special').appendChild(dataTable);
+  document.getElementById('special').appendChild(hOneChange);
   dataTable.appendChild(firstRow);
 
   var makeTableData = document.getElementById('special');
 
   for (var i = 0; i < dataLocation.hourlyData.length; i++) {
-
     var fancyRow = generateDataRow([dataLocation.hourlyData[i].time, dataLocation.hourlyData[i].pizzaSold,   dataLocation.hourlyData[i].deliveriesMade, dataLocation.hourlyData[i].driversNeeded]);
-
     dataTable.appendChild(fancyRow);
   }
 }
@@ -29,125 +27,119 @@ function collectNewStore(event) {
 // All the form input in variables
   var storeName = event.target.storeName.value;
   var hours8am = event.target.hours8am.value;
-  var minPizza8am = event.target.minPizza8am.value;
-  var maxPizza8am = event.target.maxPizza8am.value;
-  var minDelivery8am = event.target.minDelivery8am.value;
-  var maxDelivery8am = event.target.maxDelivery8am.value;
+  var minPizza8am = parseInt(event.target.minPizza8am.value);
+  var maxPizza8am = parseInt(event.target.maxPizza8am.value);
+  var minDelivery8am = parseInt(event.target.minDelivery8am.value);
+  var maxDelivery8am = parseInt(event.target.maxDelivery8am.value);
 
   var hours9am = event.target.hours9am.value;
-  var minPizza9am = event.target.minPizza9am.value;
-  var maxPizza9am = event.target.maxPizza9am.value;
-  var minDelivery9am = event.target.minDelivery9am.value;
-  var maxDelivery9am = event.target.maxDelivery9am.value;
+  var minPizza9am = parseInt(event.target.minPizza9am.value);
+  var maxPizza9am = parseInt(event.target.maxPizza9am.value);
+  var minDelivery9am = parseInt(event.target.minDelivery9am.value);
+  var maxDelivery9am = parseInt(event.target.maxDelivery9am.value);
 
   var hours10am = event.target.hours10am.value;
-  var minPizza10am = event.target.minPizza10am.value;
-  var maxPizza10am = event.target.maxPizza10am.value;
-  var minDelivery10am = event.target.minDelivery10am.value;
-  var maxDelivery10am = event.target.maxDelivery10am.value;
+  var minPizza10am = parseInt(event.target.minPizza10am.value);
+  var maxPizza10am = parseInt(event.target.maxPizza10am.value);
+  var minDelivery10am = parseInt(event.target.minDelivery10am.value);
+  var maxDelivery10am = parseInt(event.target.maxDelivery10am.value);
 
   var hours11am = event.target.hours11am.value;
-  var minPizza11am = event.target.minPizza11am.value;
-  var maxPizza11am = event.target.maxPizza11am.value;
-  var minDelivery11am = event.target.minDelivery11am.value;
-  var maxDelivery11am = event.target.maxDelivery11am.value;
+  var minPizza11am = parseInt(event.target.minPizza11am.value);
+  var maxPizza11am = parseInt(event.target.maxPizza11am.value);
+  var minDelivery11am = parseInt(event.target.minDelivery11am.value);
+  var maxDelivery11am = parseInt(event.target.maxDelivery11am.value);
 
   var hoursNoon = event.target.hoursNoon.value;
-  var minPizzaNoon = event.target.minPizzaNoon.value;
-  var maxPizzaNoon = event.target.maxPizzaNoon.value;
-  var minDeliveryNoon = event.target.minDeliveryNoon.value;
-  var maxDeliveryNoon = event.target.maxDeliveryNoon.value;
+  var minPizzaNoon = parseInt(event.target.minPizzaNoon.value);
+  var maxPizzaNoon = parseInt(event.target.maxPizzaNoon.value);
+  var minDeliveryNoon = parseInt(event.target.minDeliveryNoon.value);
+  var maxDeliveryNoon = parseInt(event.target.maxDeliveryNoon.value);
 
   var hours1pm = event.target.hours1pm.value;
-  var minPizza1pm = event.target.minPizza1pm.value;
-  var maxPizza1pm = event.target.maxPizza1pm.value;
-  var minDelivery1pm = event.target.minDelivery1pm.value;
-  var maxDelivery1pm = event.target.maxDelivery1pm.value;
+  var minPizza1pm = parseInt(event.target.minPizza1pm.value);
+  var maxPizza1pm = parseInt(event.target.maxPizza1pm.value);
+  var minDelivery1pm = parseInt(event.target.minDelivery1pm.value);
+  var maxDelivery1pm = parseInt(event.target.maxDelivery1pm.value);
 
   var hours2pm = event.target.hours2pm.value;
-  var minPizza2pm = event.target.minPizza2pm.value;
-  var maxPizza2pm = event.target.maxPizza2pm.value;
-  var minDelivery2pm = event.target.minDelivery2pm.value;
-  var maxDelivery2pm = event.target.maxDelivery2pm.value;
+  var minPizza2pm = parseInt(event.target.minPizza2pm.value);
+  var maxPizza2pm = parseInt(event.target.maxPizza2pm.value);
+  var minDelivery2pm = parseInt(event.target.minDelivery2pm.value);
+  var maxDelivery2pm = parseInt(event.target.maxDelivery2pm.value);
 
   var hours3pm = event.target.hours3pm.value;
-  var minPizza3pm = event.target.minPizza3pm.value;
-  var maxPizza3pm = event.target.maxPizza3pm.value;
-  var minDelivery3pm = event.target.minDelivery3pm.value;
-  var maxDelivery3pm = event.target.maxDelivery3pm.value;
+  var minPizza3pm = parseInt(event.target.minPizza3pm.value);
+  var maxPizza3pm = parseInt(event.target.maxPizza3pm.value);
+  var minDelivery3pm = parseInt(event.target.minDelivery3pm.value);
+  var maxDelivery3pm = parseInt(event.target.maxDelivery3pm.value);
 
   var hours4pm = event.target.hours4pm.value;
-  var minPizza4pm = event.target.minPizza4pm.value;
-  var maxPizza4pm = event.target.maxPizza4pm.value;
-  var minDelivery4pm = event.target.minDelivery4pm.value;
-  var maxDelivery4pm = event.target.maxDelivery4pm.value;
+  var minPizza4pm = parseInt(event.target.minPizza4pm.value);
+  var maxPizza4pm = parseInt(event.target.maxPizza4pm.value);
+  var minDelivery4pm = parseInt(event.target.minDelivery4pm.value);
+  var maxDelivery4pm = parseInt(event.target.maxDelivery4pm.value);
 
   var hours5pm = event.target.hours5pm.value;
-  var minPizza5pm = event.target.minPizza5pm.value;
-  var maxPizza5pm = event.target.maxPizza5pm.value;
-  var minDelivery5pm = event.target.minDelivery5pm.value;
-  var maxDelivery5pm = event.target.maxDelivery5pm.value;
+  var minPizza5pm = parseInt(event.target.minPizza5pm.value);
+  var maxPizza5pm = parseInt(event.target.maxPizza5pm.value);
+  var minDelivery5pm = parseInt(event.target.minDelivery5pm.value);
+  var maxDelivery5pm = parseInt(event.target.maxDelivery5pm.value);
 
   var hours6pm = event.target.hours6pm.value;
-  var minPizza6pm = event.target.minPizza6pm.value;
-  var maxPizza6pm = event.target.maxPizza6pm.value;
-  var minDelivery6pm = event.target.minDelivery6pm.value;
-  var maxDelivery6pm = event.target.maxDelivery6pm.value;
+  var minPizza6pm = parseInt(event.target.minPizza6pm.value);
+  var maxPizza6pm = parseInt(event.target.maxPizza6pm.value);
+  var minDelivery6pm = parseInt(event.target.minDelivery6pm.value);
+  var maxDelivery6pm = parseInt(event.target.maxDelivery6pm.value);
 
   var hours7pm = event.target.hours7pm.value;
-  var minPizza7pm = event.target.minPizza7pm.value;
-  var maxPizza7pm = event.target.maxPizza7pm.value;
-  var minDelivery7pm = event.target.minDelivery7pm.value;
-  var maxDelivery7pm = event.target.maxDelivery7pm.value;
+  var minPizza7pm = parseInt(event.target.minPizza7pm.value);
+  var maxPizza7pm = parseInt(event.target.maxPizza7pm.value);
+  var minDelivery7pm = parseInt(event.target.minDelivery7pm.value);
+  var maxDelivery7pm = parseInt(event.target.maxDelivery7pm.value);
 
   var hours8pm = event.target.hours8pm.value;
-  var minPizza8pm = event.target.minPizza8pm.value;
-  var maxPizza8pm = event.target.maxPizza8pm.value;
-  var minDelivery8pm = event.target.minDelivery8pm.value;
-  var maxDelivery8pm = event.target.maxDelivery8pm.value;
+  var minPizza8pm = parseInt(event.target.minPizza8pm.value);
+  var maxPizza8pm = parseInt(event.target.maxPizza8pm.value);
+  var minDelivery8pm = parseInt(event.target.minDelivery8pm.value);
+  var maxDelivery8pm = parseInt(event.target.maxDelivery8pm.value);
 
   var hours9pm = event.target.hours9pm.value;
-  var minPizza9pm = event.target.minPizza9pm.value;
-  var maxPizza9pm = event.target.maxPizza9pm.value;
-  var minDelivery9pm = event.target.minDelivery9pm.value;
-  var maxDelivery9pm = event.target.maxDelivery9pm.value;
+  var minPizza9pm = parseInt(event.target.minPizza9pm.value);
+  var maxPizza9pm = parseInt(event.target.maxPizza9pm.value);
+  var minDelivery9pm = parseInt(event.target.minDelivery9pm.value);
+  var maxDelivery9pm = parseInt(event.target.maxDelivery9pm.value);
 
   var hours10pm = event.target.hours10pm.value;
   var minPizza10pm = parseInt(event.target.minPizza10pm.value);
-  var maxPizza10pm = event.target.maxPizza10pm.value;
-  var minDelivery10pm = event.target.minDelivery10pm.value;
-  var maxDelivery10pm = event.target.maxDelivery10pm.value;
+  var maxPizza10pm = parseInt(event.target.maxPizza10pm.value);
+  var minDelivery10pm = parseInt(event.target.minDelivery10pm.value);
+  var maxDelivery10pm = parseInt(event.target.maxDelivery10pm.value);
 
   var hours11pm = event.target.hours11pm.value;
-  var minPizza11pm = event.target.minPizza11pm.value;
-  var maxPizza11pm = event.target.maxPizza11pm.value;
-  var minDelivery11pm = event.target.minDelivery11pm.value;
-  var maxDelivery11pm = event.target.maxDelivery11pm.value;
+  var minPizza11pm = parseInt(event.target.minPizza11pm.value);
+  var maxPizza11pm = parseInt(event.target.maxPizza11pm.value);
+  var minDelivery11pm = parseInt(event.target.minDelivery11pm.value);
+  var maxDelivery11pm = parseInt(event.target.maxDelivery11pm.value);
 
   var hoursMidnight = event.target.hoursMidnight.value;
   var minPizzaMidnight = parseInt(event.target.minPizzaMidnight.value);
   var maxPizzaMidnight = parseInt(event.target.maxPizzaMidnight.value);
-  var minDeliveryMidnight = event.target.minDeliveryMidnight.value;
-  var maxDeliveryMidnight = event.target.maxDeliveryMidnight.value;
+  var minDeliveryMidnight = parseInt(event.target.minDeliveryMidnight.value);
+  var maxDeliveryMidnight = parseInt(event.target.maxDeliveryMidnight.value);
 
   var hours1am = event.target.hours1am.value;
-  var minPizza1am = event.target.minPizza1am.value;
-  var maxPizza1am = event.target.maxPizza1am.value;
-  var minDelivery1am = event.target.minDelivery1am.value;
-  var maxDelivery1am = event.target.maxDelivery1am.value;
+  var minPizza1am = parseInt(event.target.minPizza1am.value);
+  var maxPizza1am = parseInt(event.target.maxPizza1am.value);
+  var minDelivery1am = parseInt(event.target.minDelivery1am.value);
+  var maxDelivery1am = parseInt(event.target.maxDelivery1am.value);
 
-  var nS = new PizzaLocation('special');
-  var nT = document.createElement('table');
-  nS.textContent = nS;
+  var formCreatedStore = new PizzaLocation('special');
+  formCreatedStore.pushhourlyData(new hourlyData(hours8am, minPizza8am, maxPizza8am, minDelivery8am, maxDelivery8am));
 
-  var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
-  nT.appendChild(firstRow);
 
-  nS.pushhourlyData(new hourlyData('hours8am', minPizza8am, maxPizza8am, minDelivery8am, maxDelivery8am));
-
-  var firstRow = generateHeadingRow(['Time', 'Pizza Sold', 'Pizza Deliverd', 'Drivers Needed']);
-  nT.appendChild(firstRow);
-
+  formCreatedStore.name = storeName;
+  runTable(formCreatedStore);
 }
 
 var createStoreForm = document.getElementById('newStore');
