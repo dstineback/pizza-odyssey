@@ -1,6 +1,29 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
 body{
   font-family: 'Droid Sans Mono', sans-serif;;
-  background-color: teal;
+  background-color: #BFE9FF;
+
 }
 
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+form {
+  background-color: #E8E8E8;
+  border-radius: 5px;
+
+}
+
+
+section1 {
+  background-color: #A0E9FF;
+  color: #35464C;
+
+
+}
+
+#unorder {
+  color: #4c42e6;
+}
+
+#operation {
+  color: #42575E;
+}
