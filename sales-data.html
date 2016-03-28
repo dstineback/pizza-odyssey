@@ -3,17 +3,21 @@
   <head>
 <!-- This is page for the owner to look at their data -->
     <title>Sales Data</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <header class='header'>
+      <h1>Pizz Odysse 3001 Store data page</h1>
+    </header>
     <form id="newStore">
-      <legend>New Store
-      <fieldset>
 
+      <fieldset>
+        <legend>New Store</legend>
             <label name="storeName">Store location:</label>
             <input name="storeName" type="text" >
             <br>
             <label name="hours8am">Hours</label>
-            <input name="hours8am" type="time" size="10">
+            <input name="hours8am" type="text" size="10">
 
             <label name="minPizza8am">Min Pizza</label>
             <input name="minPizza8am" type="text" size="10">
@@ -28,7 +32,7 @@
             <input name="maxDelivery8am" type="text" size="10">
             <br>
             <label name="hours9am">Hours</label>
-            <input name="hours9am" type="time" size="10">
+            <input name="hours9am" type="text" size="10">
 
             <label name="minPizza9am">Min Pizza</label>
             <input name="minPizza9am" type="text" size="10">
@@ -44,7 +48,7 @@
             <br>
 
             <label name="hours10am">Hours</label>
-            <input name="hours10am" type="time" size="10">
+            <input name="hours10am" type="text" size="10">
 
             <label name="minPizza10am">Min Pizza</label>
             <input name="minPizza10am" type="text" size="10">
@@ -59,7 +63,7 @@
             <input name="maxDelivery10am" type="text" size="10">
             <br>
             <label name="hours11am">Hours</label>
-            <input name="hours11am" type="time" size="10">
+            <input name="hours11am" type="text" size="10">
 
             <label name="minPizza11am">Min Pizza</label>
             <input name="minPizza11am" type="text" size="10">
@@ -74,7 +78,7 @@
             <input name="maxDelivery11am" type="text" size="10">
             <br>
             <label name="hoursNoon">Hours</label>
-            <input name="hoursNoon" type="time" size="10">
+            <input name="hoursNoon" type="text" size="10">
 
             <label name="minPizzanoon">Min Pizza</label>
             <input name="minPizzaNoon" type="text" size="10">
@@ -89,7 +93,7 @@
             <input name="maxDeliveryNoon" type="text" size="10">
             <br>
             <label name="hours1pm">Hours</label>
-            <input name="hours1pm" type="time" size="10">
+            <input name="hours1pm" type="text" size="10">
 
             <label name="minPizza1pm">Min Pizza</label>
             <input name="minPizza1pm" type="text" size="10">
@@ -104,7 +108,7 @@
             <input name="maxDelivery1pm" type="text" size="10">
             <br>
             <label name="hours2pm">Hours</label>
-            <input name="hours2pm" type="time" size="10">
+            <input name="hours2pm" type="text" size="10">
 
             <label name="minPizza2pm">Min Pizza</label>
             <input name="minPizza2pm" type="text" size="10">
@@ -119,7 +123,7 @@
             <input name="maxDelivery2pm" type="text" size="10">
             <br>
             <label name="hours3pm">Hours</label>
-            <input name="hours3pm" type="time" size="10">
+            <input name="hours3pm" type="text" size="10">
 
             <label name="minPizza3pm">Min Pizza</label>
             <input name="minPizza3pm" type="text" size="10">
@@ -134,7 +138,7 @@
             <input name="maxDelivery3pm" type="text" size="10">
             <br>
             <label name="hours4pm">Hours</label>
-            <input name="hours4pm" type="time" size="10">
+            <input name="hours4pm" type="text" size="10">
 
             <label name="minPizza4pm">Min Pizza</label>
             <input name="minPizza4pm" type="text" size="10">
@@ -149,7 +153,7 @@
             <input name="maxDelivery4pm" type="text" size="10">
             <br>
             <label name="hours5pm">Hours</label>
-            <input name="hours5pm" type="time" size="10">
+            <input name="hours5pm" type="text" size="10">
 
             <label name="minPizza5pm">Min Pizza</label>
             <input name="minPizza5pm" type="text" size="10">
@@ -164,7 +168,7 @@
             <input name="maxDelivery5pm" type="text" size="10">
             <br>
             <label name="hours6pm">Hours</label>
-            <input name="hours6pm" type="time" size="10">
+            <input name="hours6pm" type="text" size="10">
 
             <label name="minPizza6pm">Min Pizza</label>
             <input name="minPizza6pm" type="text" size="10">
@@ -179,7 +183,7 @@
             <input name="maxDelivery6pm" type="text" size="10">
             <br>
             <label name="hours7pm">Hours</label>
-            <input name="hours7pm" type="time" size="10">
+            <input name="hours7pm" type="text" size="10">
 
             <label name="minPizza7pm">Min Pizza</label>
             <input name="minPizza7pm" type="text" size="10">
@@ -194,7 +198,7 @@
             <input name="maxDelivery7pm" type="text" size="10">
             <br>
             <label name="hours8pm">Hours</label>
-            <input name="hours8pm" type="time" size="10">
+            <input name="hours8pm" type="text" size="10">
 
             <label name="minPizza8pm">Min Pizza</label>
             <input name="minPizza8pm" type="text" size="10">
@@ -209,7 +213,7 @@
             <input name="maxDelivery8pm" type="text" size="10">
             <br>
             <label name="hours9pm">Hours</label>
-            <input name="hours9pm" type="time" size="10">
+            <input name="hours9pm" type="text" size="10">
 
             <label name="minPizza9pm">Min Pizza</label>
             <input name="minPizza9pm" type="text" size="10">
@@ -224,7 +228,7 @@
             <input name="maxDelivery9pm" type="text" size="10">
             <br>
             <label name="hours10pm">Hours</label>
-            <input name="hours10pm" type="time" size="10">
+            <input name="hours10pm" type="text" size="10">
 
             <label name="minPizza10pm">Min Pizza</label>
             <input name="minPizza10pm" type="text" size="10">
@@ -239,7 +243,7 @@
             <input name="maxDelivery10pm" type="text" size="10">
             <br>
             <label name="hours11pm">Hours</label>
-            <input name="hours11pm" type="time" size="10">
+            <input name="hours11pm" type="text" size="10">
 
             <label name="minPizza11pm">Min Pizza</label>
             <input name="minPizza11pm" type="text" size="10">
@@ -254,7 +258,7 @@
             <input name="maxDelivery11pm" type="text" size="10">
             <br>
             <label name="hoursMidnight">Hours</label>
-            <input name="hoursMidnight" type="time" size="10">
+            <input name="hoursMidnight" type="text" size="10">
 
             <label name="minPizzaMidnight">Min Pizza</label>
             <input name="minPizzaMidnight" type="text" size="10">
@@ -269,7 +273,7 @@
             <input name="maxDeliveryMidnight" type="text" size="10">
             <br>
             <label name="hours1am">Hours</label>
-            <input name="hours1am" type="time" size="10">
+            <input name="hours1am" type="text" size="10">
 
             <label name="minPizza1am">Min Pizza</label>
             <input name="minPizza1am" type="text" size="10">
@@ -284,53 +288,15 @@
             <input name="maxDelivery1am" type="text" size="10">
 
 
-            <button type="submit">Submit</button>
+            <button type="submit">Create New Store</button>
 
 
       </fieldset>
-      </legend>
+
     </form>
+    <section id="special">
 
-<!-- All the stores information -->
-    <section>
-      <h1>Ballard</h1>
-        <table id="ballard"></table>
-    </section>
-    <section>
-      <h1>First Hill</h1>
-        <table id="hill"></table>
-    </section>
-    <section>
-      <h1>International District</h1>
-        <table id="inter"></table>
-    </section>
-    <section>
-      <h1>South Lake Union</h1>
-        <table id="slu"></table>
-    </section>
-    <section>
-      <h1>Georgetown</h1>
-        <table id="georg"></table>
-    </section>
-    <section>
-      <h1>Ravenna</h1>
-        <table id="rav"></table>
-    </section>
-    <section >
-      <table id="newStoreTable" >
-        <thead>
 
-        </thead>
-          <tr>
-              <th>
-                <td>Hour</td>
-                <td>Pizza Sold</td>
-                <td>Pizza Deliverd</td>
-                <td>Drivers Needed</td>
-              </th>
-          </tr>
-
-      </table>
     </section>
     <script src="app.js" type="text/javascript"></script>
   </body>
