@@ -12,18 +12,42 @@ form {
 
 }
 
-
-section1 {
-  background-color: #A0E9FF;
-  color: #35464C;
-
-
+div {
+  text-align: center;
+  padding: 20px;
 }
 
-#unorder {
-  color: #4c42e6;
+.header {
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+  font-size: 24px;
+}
+
+
+img {
+  display: inline-block;
+}
+#section1 {
+  background-color: #E8E8E8;
+  border: 1px solid black;
+  color: #0C1338;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
+table {
+width: 640px;
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+td, th {
+  border: 2px solid black;
+  background-color: #E8E8E8;
 }
 
 #operation {
-  color: #42575E;
+  color: black;
 }

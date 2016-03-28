@@ -2,6 +2,17 @@
 //Note to instructors I deleted all the console logs once I was able to get it working
 //function to run all the table info. Call function at the end of code for ballard, First Hill, Internationl District, South Lake Union, Georgetown, Ravenna. Call function inside of the form funtion for table being inputed by user.
 
+
+
+// function functionName(totalPizza) {
+//
+//   for (var i = 0; i < totalArray.length; i++) {
+//     var sum =(ballard.pizzaSold[i] + hill.pizzaSold[i] + inter.pizzaSold[i] + slu.pizzaSold[i] + georg.pizzaSold[i] + rav.pizzaSold[i]);
+//     return sum;
+//   }
+
+
+
 function runTable(dataLocation) {
 
   var hOneChange = document.createElement('h1');
@@ -206,6 +217,7 @@ function generateHeadingRow(data) {
   return row;
 }
 
+// var totalArray = (ballard.pizzaSold[i],hill.pizzaSold[i], inter.pizzaSold[i], slu.pizzaSold[i], georg.pizzaSold[i], rav.pizzaSold[i]);
 //ballard store
 var ballard = new PizzaLocation('ballard');
 ballard.pushhourlyData(new hourlyData('8:00 am', 0, 3, 1, 7));
