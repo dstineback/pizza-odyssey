@@ -13,29 +13,27 @@ form {
 }
 
 div {
-  text-align: center;
   padding: 20px;
+  background-image:url('http://images.all-free-download.com/images/graphiclarge/pizza_maker_pizzeria_pizza_oven_272011.jpg');
+  width: 300px;
+  height: 300px;
+  margin-bottom: 25px;
+  margin-top: 20px;
 }
 
-.header {
-  text-align: center;
-  text-shadow: 1px 1px 2px grey;
-  font-size: 24px;
+div:hover{
+transform: rotate3d(1, 1, 1, 360deg) scale(1.5) translateY(50px);
+  width: 350px;
 }
 
 
 img {
-  display: inline-block;
+
 }
-#section1 {
-  background-color: #E8E8E8;
-  border: 1px solid black;
-  color: #0C1338;
-  border-radius: 20px;
-  padding: 10px;
-  margin-right: 100px;
-  margin-left: 100px;
-}
+
+
+
+
 
 table {
 width: 640px;
@@ -48,6 +46,34 @@ td, th {
   background-color: #E8E8E8;
 }
 
+p {
+
+}
+
+.header {
+  text-align: center;
+  text-shadow: 1px 1px 2px grey;
+  font-size: 36px;
+  -webkit-animation: blink .75s linear infinite;
+  -moz-animation: blink .75s linear infinite;
+  -ms-animation: blink .75s linear infinite;
+  -o-animation: blink .75s linear infinite;
+  animation: blink .75s linear infinite;
+
+}
+
+
+#section1 {
+  background-color: #E8E8E8;
+  border: 1px solid black;
+  color: #0C1338;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+
 #operation {
   color: black;
+
 }
